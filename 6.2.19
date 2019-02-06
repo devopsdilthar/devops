@@ -1,0 +1,445 @@
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master)
+$ git log
+commit d5b940c67b477b78c142c19946fd2c231ce0a55b (HEAD -> master, origin/master)
+Author: devopsdilthar <alishadilthar786@gmail.com>
+Date:   Wed Feb 6 13:42:31 2019 +0530
+
+    devops
+
+commit ff27da619d7ec3cae2d074b7a4db504a0f864d8a
+Author: devopsdilthar <alishadilthar786@gmail.com>
+Date:   Wed Feb 6 13:39:54 2019 +0530
+
+    devops
+
+commit dc7cd303c616113283cacb309f1bddd92ad907b4
+Author: devopsdilthar <alishadilthar786@gmail.com>
+Date:   Wed Feb 6 13:37:49 2019 +0530
+
+    devops
+
+commit e010b6f613cf8bf5e864ef61b77748ac3548fcaa
+Author: java <java@softlogicsys.com>
+Date:   Wed Feb 6 13:30:06 2019 +0530
+
+    devops
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master)
+$ git revert
+usage: git revert [<options>] <commit-ish>...
+   or: git revert <subcommand>
+
+    --quit                end revert or cherry-pick sequence
+    --continue            resume revert or cherry-pick sequence
+    --abort               cancel revert or cherry-pick sequence
+    -n, --no-commit       don't automatically commit
+    -e, --edit            edit the commit message
+    -s, --signoff         add Signed-off-by:
+    -m, --mainline <parent-number>
+                          select mainline parent
+    --rerere-autoupdate   update the index with reused conflict resolution if possible
+    --strategy <strategy>
+                          merge strategy
+    -X, --strategy-option <option>
+                          option for merge strategy
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master)
+$ git revert dc7cd303c616113283ca
+error: could not revert dc7cd30... devops
+hint: after resolving the conflicts, mark the corrected paths
+hint: with 'git add <paths>' or 'git rm <paths>'
+hint: and commit the result with 'git commit'
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master|REVERTING)
+$ git add .
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master|REVERTING)
+$ git commit -m "r1"
+[master 8d3e84e] r1
+ 1 file changed, 4 insertions(+)
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master)
+$
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master)
+$ git revert  ff27da619d7ec3cae2d
+error: could not revert ff27da6... devops
+hint: after resolving the conflicts, mark the corrected paths
+hint: with 'git add <paths>' or 'git rm <paths>'
+hint: and commit the result with 'git commit'
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master|REVERTING)
+$ git add .
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master|REVERTING)
+$ git commit -m "r2"
+[master 86b3cda] r2
+ 1 file changed, 4 insertions(+)
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master)
+$ git log
+commit 86b3cda744d34029f29f0c4b96ff2c10b6805c14 (HEAD -> master)
+Author: devopsdilthar <alishadilthar786@gmail.com>
+Date:   Wed Feb 6 13:55:01 2019 +0530
+
+    r2
+
+commit 8d3e84e9bb79313858a0b0423daa1fcdfa932144
+Author: devopsdilthar <alishadilthar786@gmail.com>
+Date:   Wed Feb 6 13:53:53 2019 +0530
+
+    r1
+
+commit d5b940c67b477b78c142c19946fd2c231ce0a55b (origin/master)
+Author: devopsdilthar <alishadilthar786@gmail.com>
+Date:   Wed Feb 6 13:42:31 2019 +0530
+
+    devops
+
+commit ff27da619d7ec3cae2d074b7a4db504a0f864d8a
+Author: devopsdilthar <alishadilthar786@gmail.com>
+Date:   Wed Feb 6 13:39:54 2019 +0530
+
+    devops
+
+commit dc7cd303c616113283cacb309f1bddd92ad907b4
+Author: devopsdilthar <alishadilthar786@gmail.com>
+Date:   Wed Feb 6 13:37:49 2019 +0530
+
+    devops
+
+commit e010b6f613cf8bf5e864ef61b77748ac3548fcaa
+Author: java <java@softlogicsys.com>
+Date:   Wed Feb 6 13:30:06 2019 +0530
+
+    devops
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master)
+$
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master)
+$ git revert 86b3cda744d34
+[master ed7e317] r2-r Revert "r2"
+ 1 file changed, 4 deletions(-)
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master)
+$
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master)
+$ git revert 8d3e84e9bb79313
+[master 65a39ea] r1-r :wqRevert "r1"
+ 1 file changed, 4 deletions(-)
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master)
+$ git branch dev
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master)
+$ git branch sat
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master)
+$ git branch uat
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master)
+$ git branch pro
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master)
+$ git branch
+  dev
+* master
+  pro
+  sat
+  uat
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master)
+$ git checkout dev
+Switched to branch 'dev'
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (dev)
+$ touch dev.txt
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (dev)
+$ git add .
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (dev)
+$ git commit -m "dev"
+[dev 1cae1b2] dev
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 dev.txt
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (dev)
+$ git push
+fatal: The current branch dev has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin dev
+
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (dev)
+$ git push --set-upstream origin dev
+Username for 'https://github.com': devopsdilthar
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (11/11), 1.06 KiB | 1.06 MiB/s, done.
+Total 11 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), completed with 1 local object.
+remote:
+remote: Create a pull request for 'dev' on GitHub by visiting:
+remote:      https://github.com/devopsdilthar/devops/pull/new/dev
+remote:
+To https://github.com/devopsdilthar/devops.git
+ * [new branch]      dev -> dev
+Branch 'dev' set up to track remote branch 'dev' from 'origin'.
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (dev)
+$ git checkout uat
+Switched to branch 'uat'
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (uat)
+$ touch uat.txt
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (uat)
+$ git add .
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (uat)
+$ git commit -m "uat"
+[uat 8ba0de2] uat
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 uat.txt
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (uat)
+$ git push
+fatal: The current branch uat has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin uat
+
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (uat)
+$ git push --set-upstream origin uat
+Username for 'https://github.com': devopsdilthar
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 277 bytes | 277.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote:
+remote: Create a pull request for 'uat' on GitHub by visiting:
+remote:      https://github.com/devopsdilthar/devops/pull/new/uat
+remote:
+To https://github.com/devopsdilthar/devops.git
+ * [new branch]      uat -> uat
+Branch 'uat' set up to track remote branch 'uat' from 'origin'.
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (uat)
+$ git checkout sat
+Switched to branch 'sat'
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (sat)
+$ git merge dev
+Updating 65a39ea..1cae1b2
+Fast-forward
+ dev.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 dev.txt
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (sat)
+$ git push
+fatal: The current branch sat has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin sat
+
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (sat)
+$ git add .
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (sat)
+$ git commit -m "me1"
+On branch sat
+nothing to commit, working tree clean
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (sat)
+$ git push --set-upstream origin sat
+Username for 'https://github.com': devopsdilthar
+Total 0 (delta 0), reused 0 (delta 0)
+remote:
+remote: Create a pull request for 'sat' on GitHub by visiting:
+remote:      https://github.com/devopsdilthar/devops/pull/new/sat
+remote:
+To https://github.com/devopsdilthar/devops.git
+ * [new branch]      sat -> sat
+Branch 'sat' set up to track remote branch 'sat' from 'origin'.
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (sat)
+$ git rebase sat pro
+First, rewinding head to replay your work on top of it...
+Fast-forwarded pro to sat.
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (pro)
+$ git branch
+  dev
+  master
+* pro
+  sat
+  uat
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (pro)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 4 commits.
+  (use "git push" to publish your local commits)
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master)
+$ git branch -D dev
+Deleted branch dev (was 1cae1b2).
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master)
+$ git branch -D dpro
+error: branch 'dpro' not found.
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master)
+$ git branch -D pro sat  uat
+Deleted branch pro (was 1cae1b2).
+Deleted branch sat (was 1cae1b2).
+Deleted branch uat (was 8ba0de2).
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master)
+$ git branch
+* master
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master)
+$ git push origin --delete dev sat uat
+Username for 'https://github.com': devopsdilthar
+To https://github.com/devopsdilthar/devops.git
+ - [deleted]         dev
+ - [deleted]         sat
+ - [deleted]         uat
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master)
+$ git log
+commit 65a39eae5de68d8680a7a91f3537e2605aeabef8 (HEAD -> master)
+Author: devopsdilthar <alishadilthar786@gmail.com>
+Date:   Wed Feb 6 13:56:11 2019 +0530
+commit 65a39eae5de68d8680a7a91f3537e2605aeabef8 (HEAD -> master)
+Author: devopsdilthar <alishadilthar786@gmail.com>
+Date:   Wed Feb 6 13:56:11 2019 +0530
+
+    r1-r :wqRevert "r1"
+
+    This reverts commit 8d3e84e9bb79313858a0b0423daa1fcdfa932144.
+
+commit ed7e317cb33f93a12f6b9d70bc9666f915c1f96b
+Author: devopsdilthar <alishadilthar786@gmail.com>
+Date:   Wed Feb 6 13:55:35 2019 +0530
+
+    r2-r Revert "r2"
+
+    This reverts commit 86b3cda744d34029f29f0c4b96ff2c10b6805c14.
+
+commit 86b3cda744d34029f29f0c4b96ff2c10b6805c14
+Author: devopsdilthar <alishadilthar786@gmail.com>
+Date:   Wed Feb 6 13:55:01 2019 +0530
+
+    r2
+
+commit 8d3e84e9bb79313858a0b0423daa1fcdfa932144
+Author: devopsdilthar <alishadilthar786@gmail.com>
+Date:   Wed Feb 6 13:53:53 2019 +0530
+
+    r1
+
+commit d5b940c67b477b78c142c19946fd2c231ce0a55b (origin/master)
+Author: devopsdilthar <alishadilthar786@gmail.com>
+Date:   Wed Feb 6 13:42:31 2019 +0530
+
+    devops
+
+commit ff27da619d7ec3cae2d074b7a4db504a0f864d8a
+Author: devopsdilthar <alishadilthar786@gmail.com>
+Date:   Wed Feb 6 13:39:54 2019 +0530
+
+    devops
+
+commit dc7cd303c616113283cacb309f1bddd92ad907b4
+Author: devopsdilthar <alishadilthar786@gmail.com>
+Date:   Wed Feb 6 13:37:49 2019 +0530
+
+    devops
+
+commit e010b6f613cf8bf5e864ef61b77748ac3548fcaa
+Author: java <java@softlogicsys.com>
+Date:   Wed Feb 6 13:30:06 2019 +0530
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master)
+$ git reset 8d3e84e9b
+Unstaged changes after reset:
+M       Test message.txt
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master)
+$ git log
+commit 8d3e84e9bb79313858a0b0423daa1fcdfa932144 (HEAD -> master)
+Author: devopsdilthar <alishadilthar786@gmail.com>
+Date:   Wed Feb 6 13:53:53 2019 +0530
+
+    r1
+
+commit d5b940c67b477b78c142c19946fd2c231ce0a55b (origin/master)
+Author: devopsdilthar <alishadilthar786@gmail.com>
+Date:   Wed Feb 6 13:42:31 2019 +0530
+
+    devops
+
+commit ff27da619d7ec3cae2d074b7a4db504a0f864d8a
+Author: devopsdilthar <alishadilthar786@gmail.com>
+Date:   Wed Feb 6 13:39:54 2019 +0530
+
+    devops
+
+commit dc7cd303c616113283cacb309f1bddd92ad907b4
+Author: devopsdilthar <alishadilthar786@gmail.com>
+Date:   Wed Feb 6 13:37:49 2019 +0530
+
+    devops
+
+commit e010b6f613cf8bf5e864ef61b77748ac3548fcaa
+Author: java <java@softlogicsys.com>
+Date:   Wed Feb 6 13:30:06 2019 +0530
+
+    devops
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master)
+$
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master)
+$ git reset dc7cd303c61611328
+Unstaged changes after reset:
+M       Test message.txt
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master)
+$ git log
+commit dc7cd303c616113283cacb309f1bddd92ad907b4 (HEAD -> master)
+Author: devopsdilthar <alishadilthar786@gmail.com>
+Date:   Wed Feb 6 13:37:49 2019 +0530
+
+    devops
+
+commit e010b6f613cf8bf5e864ef61b77748ac3548fcaa
+Author: java <java@softlogicsys.com>
+Date:   Wed Feb 6 13:30:06 2019 +0530
+
+    devops
+
+java@SLS-FLOOR2-132 MINGW64 ~/Desktop/dilthar (master)
+$ git pull
+error: Your local changes to the following files would be overwritten by merge:
+        Test message.txt
+Please commit your changes or stash them before you merge.
+Aborting
+Updating dc7cd30..d5b940c
